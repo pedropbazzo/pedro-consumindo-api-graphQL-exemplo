@@ -1,0 +1,46 @@
+<section>
+<nav class="navbar container navbar-light bg-dark">
+  <div class="container-fluid">
+    <h3 class="text-white">Games</h3>
+    <small class="text-white float-right">By: @vinricardo</small>
+  </div>
+</nav>
+<div class="init w-100 mt-5 pt-5">
+  <p class="text-center title mx-0">
+    Use of GraphQL with Node.js and Angular with Apollo</p>
+    <p class="text-center sub-title mx-0">Aims to show games registered in a fake database using front-end and back-end technologies</p>
+</div>
+
+<div class="container-fluid w-50">
+  <app-list></app-list>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="card text-center col-6">
+    <div class="card-header">
+      Register New Game  | Update Game Genre
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" class="row justify-content-around w-50 float-left">
+        <small class="w-100 mb-4 text-muted">Create Game</small>
+        <input class="form-control col-10 mb-3" placeholder="Type the game's title" formControlName="title"/>
+        <input class="form-control col-10 mb-3" placeholder="Type the game's genre" formControlName="genre"/>
+        <input class="form-control col-10 mb-3" placeholder="Type the game's developers" formControlName="developed"/>
+    </form>
+    <form [formGroup]="formUpdate" class="row justify-content-around w-50">
+      <small class="w-100 mb-4 text-muted">Update Genre</small>
+        <input class="form-control col-10 mb-3" placeholder="Type the game's ID" formControlName="id"/>
+        <input class="form-control col-10 mb-3" placeholder="Type the game's new genre" formControlName="genreUp"/>
+    </form>
+    <div class="cmd">
+           <button class="btn btn-dark btn-sm" (click)="sendForm()" [disabled]="form.invalid">Create</button>
+           <button class="btn btn-info btn-sm ml-4" (click)="updateForm()" [disabled]="formUpdate.invalid">Update</button>
+    </div>
+    </div>
+    <div class="card-footer text-muted">
+      <small>Insert datas in the inputs and submit</small>
+    </div>
+  </div>
+</div>
+</section>
